@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Writing Assistant</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
+</head>
+
+<body>
+    <main>
+        <h1>Writing Assistant</h1>  
+
+        <form id="prompt">
+            <label for="promptInput">Prompt Generation</label><br>
+            <textarea id="promptInput" rows="6" cols="50"></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <form id="outline">
+            <label for="outlineInput">Story Outliner</label><br>
+            <textarea id="outlineInput" rows="6" cols="50"></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <form id="revision">
+            <label for="revisionInput">Revision Tool</label><br>
+            <textarea id="revisionInput" rows="6" cols="50"></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <div id="output"></div>
+        
+    </main>
+
+
+    <script src="backend.js"></script>
+</body>
+
+</html>
