@@ -1,10 +1,10 @@
-async function callGemini(prompt) {
+async function callGemini(formId, userInput) {
     console.log("calling backend");
 
     const res = await fetch("/gemini", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt })
+        body: JSON.stringify({ formId, userInput })
     });
 
     const data = await res.json();
@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
-            const prompt = input.value.trim();
+            const prompt = input.value;
             if (prompt) {
                 output.textContent = "Loading...";
-                const result = await callGemini(prompt);
+                const result = await callGemini(formId, prompt);
                 output.textContent = result;
             }
         });
