@@ -1,7 +1,7 @@
 async function callGemini(prompt) {
     console.log("calling gemini")
 
-    apiKey="AIzaSyCyR0I283Ydl9LT2O8s3ROxfFw-bg-plKY"
+    apiKey="check the doc for api key"
 
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
     const res = await fetch(url, {
