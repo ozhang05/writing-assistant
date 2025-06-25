@@ -1,20 +1,15 @@
 async function callGemini(prompt) {
-    console.log("calling gemini")
+    console.log("calling backend");
 
-    apiKey="check the doc for api key"
-
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-    const res = await fetch(url, {
+    const res = await fetch("/gemini", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            contents: [{ parts: [{ text: prompt }] }]
-        })
+        body: JSON.stringify({ prompt })
     });
-    const data = await res.json();
-    return data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "(No reply)";
-}
 
+    const data = await res.json();
+    return data.text ?? "(No reply)";
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     const output = document.getElementById("output");
