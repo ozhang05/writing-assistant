@@ -13,8 +13,8 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.post('/gemini', async (req, res) => {
     const formId = req.body.formId;
     const userInput = req.body.userInput;
-    if (!formId) return res.status(400).send("Bad form")
-    if (!userInput) return res.status(400).send("Bad prompt");
+    // if (!formId) return res.status(400).send("Bad form")
+    // if (!userInput) return res.status(400).send("Bad prompt");
 
     switch (formId) {
         case "prompt":
@@ -43,7 +43,10 @@ app.post('/gemini', async (req, res) => {
         }
     );
 
+    console.log(userInput)
+    console.log("\n")
     console.log(JSON.stringify(response.data));
+    console.log("-------------------------------------")
 
     const candidates = response.data?.candidates;
     const first = candidates?.[0];

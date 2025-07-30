@@ -11,7 +11,7 @@ export default function RadioGroup({ label, name, options, selected, onChange })
             checked={selected === opt}
             onChange={onChange}
           />
-          {opt} Person
+          {opt}
         </label>
       ))}
       <br />
